@@ -9,10 +9,23 @@
 </head>
 <body>
 
+  <!-- Contêiner principal -->
   <div class="game-board">
+    
+    <!-- Contêiner que exibe a pontuação atual e o recorde -->
+    <div class="score-container">
+      <div>Pontos: <span id="current-score">0</span></div>
+      <div>Maior Pontuação: <span id="high-score">0</span></div>
+    </div>
+    
+    <!-- Elementos do jogo -->
     <img src="./images/clouds.png" class="clouds" alt="Nuvens">
-    <img src="./images/mario.gif" class="mario" alt="Super Mario">
-    <img src="./images/pipe.png" class="pipe" alt="Tubo">
+    <img src="./images/mario.gif" class="mario" alt="Super Mario"> 
+    <img src="./images/pipe.png" class="pipe" alt="Tubo"> 
+    
+    <!-- Mensagem para reiniciar -->
+    <div id="restart-message" class="restart-message" style="display: none;">Aperte <strong>R</strong> para reiniciar</div>
+    
   </div>
 
 </body>
