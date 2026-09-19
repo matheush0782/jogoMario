@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-board {
+  width: 100%;
+  height: 670px;
+  border-bottom: 28px solid #2e8b57; /* Chão verde */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Esconde elementos que saem do tabuleiro */
+  background: linear-gradient(#87ceeb, #e0f6ff); /* Fundo de céu azul e branco */
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  right: -80px; /* Começa fora da tela à direita */
+  animation: pipe-animation 1.5s infinite linear; /* Animação de movimento contínuo */
+}
+
+.mario {
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+}
+
+
+.jump {
+  animation: jump 500ms ease-out; /* Animação de pulo rápida e suave */
+}
+
+/* Estilo das nuvens no fundo */
+.clouds {
+  position: absolute;
+  width: 550px;
+  animation: clouds-animation 20s infinite linear; /* Movimento lento e contínuo */
+}
+
+/* Animação do tubo movendo-se da direita para a esquerda */
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Animação do pulo do Mario */
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/* Animação das nuvens movendo-se da direita para a esquerda */
+@keyframes clouds-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Estilo da mensagem de reiniciar o jogo */
+.restart-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff0000; /* Vermelho para destaque */
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff; /* Contorno branco */
+  z-index: 10;
+  animation: blink-message 1s infinite; /* Animação piscando */
+}
+
+/* Animação para fazer a mensagem de reinício piscar */
+@keyframes blink-message {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Estilo do contêiner de pontuação (Score) */
+.score-container {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  text-align: right;
+  font-family: Arial, sans-serif; 
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000; /* Contorno preto para contraste */
+  z-index: 10;
+}
